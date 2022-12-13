@@ -265,3 +265,9 @@
 
 // calculator.son(2,8)
 
+const player = {
+    name: "Nico",
+    age: 98,
+};
+
+console.log(player, console);
