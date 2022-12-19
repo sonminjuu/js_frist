@@ -265,9 +265,198 @@
 
 // calculator.son(2,8)
 
-const player = {
-    name: "Nico",
-    age: 98,
-};
 
-console.log(player, console);
+
+//2202-12-13
+
+// const player = {
+//     name: "Nico",
+//     age: 98,
+// };
+// console.log(player);
+// player.name = "nicolas";
+// console.log(player);
+// player.sexy = "soon";
+// console.log(player, console);
+
+// function plus(a, b) {
+//     console.log(a + b);
+// }
+
+// plus(5, 10);
+// plus(52324, 1035);
+// plus(5343333, 14340);
+// plus(34345, 13434343430);
+
+// const calculator = {
+//     add: function(a, b){
+//         console.log(a, b);
+//     },
+// };
+
+// calculator.add(5, 1);
+
+// const calculator = {
+//     add: function(a, b){
+//         console.log(a + b);
+//     },
+//     powerof: function(a, b){
+//         console.log(a - b);
+//     },
+//     times: function(a, b){
+//         console.log(a * b);
+//     },
+//     divide: function(a, b){
+//         console.log(a / b);
+//     },
+//     square: function(a, b){
+//         console.log(a ** b);
+//     },
+// };
+
+// calculator.add(1, 2);
+// calculator.powerof(11, 2);
+// calculator.times(10, 2);
+// calculator.divide(10, 2);
+// calculator.square(10, 2);
+
+// 나의 한국 나이 계산하기
+// const age = 96;
+// function calculateKrAge(age0fForeigner){
+//     return age0fForeigner + 2;
+// }
+
+
+// const krAge = calculateKrAge(age);
+
+// console.log(krAge);
+
+
+// 조건문
+// const age = parseInt(prompt("How old are you?"));
+
+// if(isNaN(age) || age < 0){
+//     /// condition === true
+//     console.log("please write a real positive number");
+// } else if (age < 18) {
+//     console.log("You are too young");
+// } else if (age >= 18 && age <= 50) {
+//     console.log("You can drink");
+// } else if (age > 50 && age <= 80) {
+//     console.log("You should exercise");
+// } else if(age === 100) {
+//     console.log("wow you are wise");
+// } else if (age > 80) {
+//     console.log("You can do whatever you want.");
+// }
+
+
+
+// 자바스크립트 HTML
+// const h1 = document.querySelector(".hello h1");
+
+// function handleTitleClick(){
+//     h1.style.color = "blue";
+// }
+
+// function handleMouseEnter(){
+//     h1.innerText = "Mouse is here!";
+// }
+
+// function handleMouseLeave(){
+//     h1.innerText = "Mouse is gone!";
+// }
+
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// function handleWindowCopy(){
+//     alert("copier!");
+// }
+
+// function handleWindowOfflie(){
+//     alert("SOS no WIFI");
+// }
+
+// function handleWindowOnline(){
+//     alert("ALL GOOD");
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+// h1.addEventListener("mouseenter", handleMouseEnter);
+// h1.addEventListener("mouseleave", handleMouseLeave);
+
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+// window.addEventListener("offlie", handleWindowOfflie);
+// window.addEventListener("online", handleWindowOnline);
+
+
+
+// 자바스크립트의 CSS
+// const h1 = document.querySelector(".hello h1");
+
+// function handleTitleClick(){
+//     const currentColor = h1.style.color;
+//     let newColor;
+//     if (currentColor === "blue"){
+//         newColor = "tomato";
+//     }
+//     else {
+//         newColor = "blue";
+//     }
+//     h1.style.color = newColor;
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+
+
+// 줄인 코드
+// const h1 = document.querySelector(".hello h1");
+
+// function handleTitleClick(){
+//     h1.classList.toggle("clicked");
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+
+
+// 로그인
+const loginForm = document.querySelector("#login-form");
+const loginInput= document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY,username);
+    paintGreetings(username);
+}
+
+function paintGreetings(username){
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME)
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings(savedUsername);
+}
+
+
+
+
+
+
+
